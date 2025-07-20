@@ -1,0 +1,128 @@
+/* General Styles */
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header Styles */
+header {
+    display: flex; /* Use flexbox to align items */
+    padding: 20px;
+    background-color: #4c7aaf;
+    color: white;
+}
+
+/* Logo Styles */
+.logo {
+    width: 100px; /* Set the desired width */
+    height: 100px; /* Maintain aspect ratio */
+    margin-right: 20px; /* Space between logo and heading */
+}
+
+/* Heading Styles */
+h1 {
+    flex: 1; /* Allow heading to take up remaining space */
+    text-align: center; /* Center the heading */
+    margin: 0; /* Remove default margin */
+}
+
+/* Centering the Header Content */
+.header-content {
+    display: flex;
+    justify-content: center; /* Center the heading */
+    flex: 1; /* Allow it to grow and fill available space */
+}
+
+
+h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+/* Info Section Styles */
+.info-section {
+    padding: 20px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.info-content {
+    display: flex; /* Create a flex container */
+    flex: 1; /* Allow it to grow */
+}
+
+.text-content {
+    flex: 1; /* Take up remaining space */
+    padding-right: 20px; /* Space between text and image */
+}
+
+.image-content {
+    flex: 0 0 30%; /* Fixed width for the image section */
+}
+
+.info-image {
+    width: 100%; /* Responsive image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Rounded corners for the image */
+}
+h2 {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+p {
+    font-size: 18px;
+}
+
+ol, ul {
+    margin-left: 20px; /* Indent for lists */
+}
+
+/* Graph Section Styles */
+.graph-section {
+    text-align: center;
+    margin: 20px;
+}
+
+.graph-container img {
+    max-width: 100%;
+    height: auto; /* Maintain aspect ratio */
+}
+/* Form Styles */
+.prediction-form {
+    padding: 20px;
+    background-color: #eaeaea; /* Change this color as desired */
+    border-radius: 8px;
+}
+
+.form-group {
+    margin-bottom: 15px; /* Space between form elements */
+}
+
+label {
+    display: block; /* Ensures label is on its own line */
+    margin-bottom: 5px; /* Space between label and select */
+}
+
+select {
+    width: 100%; /* Full width for select elements */
+    padding: 8px; /* Padding for better usability */
+    border: 1px solid #ccc; /* Border style */
+    border-radius: 4px; /* Rounded corners */
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #4c5caf;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

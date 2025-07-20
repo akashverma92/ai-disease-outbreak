@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid-19 Information</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Header Styles */
+        header {
+            display: flex; /* Use flexbox to align items */
+            padding: 20px;
+            background-color: #4c7aaf;
+            color: white;
+        }
+
+        /* Logo Styles */
+        .logo {
+            width: 100px;
+            height: 100px;
+            margin-right: 20px;
+        }
+
+        /* Main Heading Styles */
+        h1 {
+            flex: 1; /* Allow heading to take up remaining space */
+            text-align: center;
+            margin: 0;
+            font-size: 36px;
+        }
+
+        /* Info Section Styles */
+        .info-section {
+            padding: 20px;
+            margin: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-content {
+            display: flex;
+        }
+
+        .text-content {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .image-content {
+            flex: 0 0 30%; /* Fixed width for the image section */
+        }
+
+        .info-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* Subheading Styles */
+        h2 {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        ol, ul {
+            margin-left: 20px;
+        }
+
+        /* Graph Section Styles */
+        .graph-section {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .graph-container img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Form Styles */
+        .prediction-form {
+            padding: 20px;
+            background-color: #eaeaea;
+            border-radius: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        /* Footer Styles */
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #4c5caf;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Graph Links Styles */
+        .graph-links {
+            margin-top: 20px;
+        }
+
+        /* Hide image initially */
+        #yearImage {
+            display: none;
+            margin-top: 20px;
+            max-width: 100%;
+        }
+    </style>
+    <script>
+        function redirectToGraph(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            const year = document.getElementById('year').value; // Get selected year
+            const disease = document.getElementById('Covid').value; // Get selected disease
+            const yearImage = document.getElementById('yearImage'); // Image element
+
+            // Check if a year is selected
+            if (year) {
+                // Display corresponding image based on the selected year
+                let imageUrl = ''; 
+                
+                switch (year) {
+                    case '2022':
+                        imageUrl = 'https://github.com/Ayushverma23/NPS-/blob/main/a.png?raw=true'; // Correct image URL for 2022
+                        break;
+                    case '2023':
+                        imageUrl = 'https://github.com/Ayushverma23/NPS-/blob/main/2023.png?raw=true'; // Correct image URL for 2023
+                        break;
+                    case '2024':
+                        imageUrl = 'https://github.com/Ayushverma23/NPS-/blob/main/2024.png?raw=true'; // Correct image URL for 2024
+                        break;
+                    case '2025':
+                        imageUrl = 'https://github.com/Ayushverma23/NPS-/blob/main/2025.png?raw=true'; // Correct image URL for 2025
+                        break;
+                    default:
+                        imageUrl = ''; // If no valid year is selected, leave imageUrl empty
+                }
+
+                // If an image URL exists for the year, update the src and display the image
+                if (imageUrl) {
+                    yearImage.src = imageUrl;
+                    yearImage.style.display = 'block'; // Show the image
+                } else {
+                    yearImage.style.display = 'none'; // Hide the image if no valid year is selected
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='logo.jpg') }}" alt="logo" class="logo">
+        <h1>Covid-19</h1>
+    </header>
+
+    <section class="info-section">
+        <h2>Overview</h2>
+        <div class="info-content">
+            <div class="text-content">
+                <p>Covid-19 is caused by the SARS-CoV-2 virus. It primarily spreads through respiratory droplets. Symptoms may range from mild to severe. Vaccination is a critical tool in controlling the virus. New variants may emerge, requiring updated vaccines. Public health measures remain essential for prevention.</p>
+    
+                <h2>Key Numerical Data</h2>
+                <ul>
+                    <li>Confirmed cases worldwide: 600 million+</li>
+                    <li>Deaths: 6.5 million+</li>
+                    <li>Vaccination rate: 65% globally</li>
+                </ul>
+            </div>
+            <div class="image-content">
+                <img src="https://catalyst.harvard.edu/wp-content/uploads/2022/05/iStock-1297985631.jpg" alt="Covid-19 Image" class="info-image">
+            </div>
+        </div>
+    </section>
+
+    <section class="prediction-form">
+        <h2>Make a Prediction</h2>
+        <form id="predictionForm" onsubmit="redirectToGraph(event)">
+            <div class="form-group">
+                <label for="Covid">Select disease:</label>
+                <select id="Covid" name="covid" required>
+                    <option value="">--Select Disease--</option>
+                    <option value="1">COVID-19</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="year">Select Year:</label>
+                <select id="year" name="year" required>
+                    <option value="">--Select Year--</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="country">Choose Country:</label>
+                <select id="country" name="country" required>
+                    <option value="">--Select Country--</option>
+                    <option value="USA">USA</option>
+                    <option value="India">India</option>
+                    <option value="Brazil">Brazil</option>
+                    <option value="Russia">Russia</option>
+                    <option value="UK">UK</option>
+                </select>
+            </div>
+
+            <button type="submit">Predict</button>
+        </form>
+        <div class="graph-links" id="graphLinks"></div> <!-- Container for graph links -->
+    </section>
+
+    <!-- Hidden image that will be displayed based on year selection -->
+    <section class="graph-section">
+        <h2>Graph Representation</h2>
+        <div class="graph-container">
+            <img id="yearImage" src="" alt="Yearly Prediction Image" />
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 AI-Based Disease Outbreak Prediction System. All rights reserved.</p>
+    </footer>
+</body>
+</html>

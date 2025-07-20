@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid-19 Information</title>
+    <style>
+        /* General Styles */
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header Styles */
+header {
+    display: flex; /* Use flexbox to align items */
+    padding: 20px;
+    background-color: #4c7aaf;
+    color: white;
+}
+
+/* Logo Styles */
+.logo {
+    width: 100px; /* Set the desired width */
+    height: 100px; /* Maintain aspect ratio */
+    margin-right: 20px; /* Space between logo and heading */
+}
+
+/* Heading Styles */
+h1 {
+    flex: 1; /* Allow heading to take up remaining space */
+    text-align: center; /* Center the heading */
+    margin: 0; /* Remove default margin */
+}
+
+/* Centering the Header Content */
+.header-content {
+    display: flex;
+    justify-content: center; /* Center the heading */
+    flex: 1; /* Allow it to grow and fill available space */
+}
+
+
+h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+/* Info Section Styles */
+.info-section {
+    padding: 20px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.info-content {
+    display: flex; /* Create a flex container */
+    flex: 1; /* Allow it to grow */
+}
+
+.text-content {
+    flex: 1; /* Take up remaining space */
+    padding-right: 20px; /* Space between text and image */
+}
+
+.image-content {
+    flex: 0 0 30%; /* Fixed width for the image section */
+}
+
+.info-image {
+    width: 100%; /* Responsive image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Rounded corners for the image */
+}
+h2 {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+p {
+    font-size: 18px;
+}
+
+ol, ul {
+    margin-left: 20px; /* Indent for lists */
+}
+
+/* Graph Section Styles */
+.graph-section {
+    text-align: center;
+    margin: 20px;
+}
+
+.graph-container img {
+    max-width: 100%;
+    height: auto; /* Maintain aspect ratio */
+}
+/* Form Styles */
+.prediction-form {
+    padding: 20px;
+    background-color: #eaeaea; /* Change this color as desired */
+    border-radius: 8px;
+}
+
+.form-group {
+    margin-bottom: 15px; /* Space between form elements */
+}
+
+label {
+    display: block; /* Ensures label is on its own line */
+    margin-bottom: 5px; /* Space between label and select */
+}
+
+select {
+    width: 100%; /* Full width for select elements */
+    padding: 8px; /* Padding for better usability */
+    border: 1px solid #ccc; /* Border style */
+    border-radius: 4px; /* Rounded corners */
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #4c5caf;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+</style>
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='logo.jpg') }}" alt="logo" class="logo"> <!-- Added class to logo -->
+        <h1>Measles</h1>
+    </header>
+
+    <section class="info-section">
+        <h2>Overview</h2>
+        <div class="info-content">
+            <div class="text-content">
+                <p>Measles is a highly contagious viral disease caused by the measles virus. It spreads through respiratory droplets when an infected person coughs or sneezes. Symptoms typically appear 10-14 days after exposure and include high fever, cough, runny nose, and a distinctive red rash. Vaccination with the measles-mumps-rubella (MMR) vaccine is highly effective in preventing the disease.</p>
+    
+                <h2>Key Numerical Data</h2>
+                <ul>
+                    <li>Global measles deaths reached approximately 207,500 in 2019.</li>
+                    <li>In 2020, there was a reported increase of 557% in measles cases compared to 2019. </li>
+                    <li>The vaccination rate for measles is about 85% globally, but the herd immunity threshold is 95%.</li>
+                </ul>
+            </div>
+            <div class="image-content">
+                <img src="https://newsnetwork.mayoclinic.org/n7-mcnn/7bcc9724adf7b803/uploads/2017/02/measles-16x9.jpg" alt="Covid-19 Image" class="info-image"> <!-- Update the source with your image -->
+            </div>
+        </div>
+    </section>
+
+    <section class="prediction-form">
+        <h2>Make a Prediction</h2>
+        <form id="predictionForm" action="your_backend_endpoint" method="POST">
+            <div class="form-group">
+                <label for="month">Select Month:</label>
+                <select id="month" name="month" required>
+                    <option value="">--Select Month--</option>
+                    <option value="1">January</option>
+                    <option value="2">February</option>
+                    <option value="3">March</option>
+                    <option value="4">April</option>
+                    <option value="5">May</option>
+                    <option value="6">June</option>
+                    <option value="7">July</option>
+                    <option value="8">August</option>
+                    <option value="9">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="year">Select Year:</label>
+                <select id="year" name="year" required>
+                    <option value="">--Select Year--</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="country">Choose Country:</label>
+                <select id="country" name="country" required>
+                    <option value="">--Select Country--</option>
+                    <option value="USA">USA</option>
+                    <option value="India">India</option>
+                    <option value="Brazil">Brazil</option>
+                    <option value="Russia">Russia</option>
+                    <option value="UK">UK</option>
+                    <!-- Add more countries as needed -->
+                </select>
+            </div>
+
+            <button type="submit">Predict</button>
+        </form>
+    </section>
+    <!-- Graph -->
+    <section class="graph-section">
+        <h2>Graph Representation</h2>
+        <div class="graph-container">
+            <img src="path/to/your/graph.png" alt="Covid-19 Graph" /> <!-- Update the source with your graph image -->
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 AI-Based Disease Outbreak Prediction System. All rights reserved.</p>
+    </footer>
+</body>
+</html>

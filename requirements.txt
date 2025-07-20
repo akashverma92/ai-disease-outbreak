@@ -1,0 +1,12 @@
+Flask==2.3.3
+gunicorn==21.2.0
+joblib==1.4.2
+plotly==5.22.0
+google-generativeai==0.3.2
+langchain-google-genai==0.0.5
+pandas==2.2.2
+numpy==1.26.4
+seaborn==0.13.2
+matplotlib==3.9.0
+scikit-learn==1.5.0
+tensorflow==2.15.0

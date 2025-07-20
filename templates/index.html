@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Based Disease Outbreak Prediction System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='logo.jpg') }}" alt="logo" class="logo"> 
+        <h1>AI-DOPS</h1>
+    </header>
+    
+    <div class="slider">
+        <div class="slider-text">
+            <p>Stay informed about disease outbreaks and predictive analytics!</p>
+            <p>Our platform enhances public health responses with AI-based insights.</p>
+            <p>Join us in our mission to predict and respond to disease outbreaks!</p>
+        </div>
+    </div>
+
+    <!-- Home Fragment Background -->
+    <section class="home-fragment">
+        <!-- Grid of 8 Images with Disease Names -->
+        <section class="image-grid">
+            <div class="image-container">
+                <a href="{{ url_for('disease_page', disease='covid-19') }}"> 
+                    <img src="https://catalyst.harvard.edu/wp-content/uploads/2022/05/iStock-1297985631.jpg" alt="Covid-19">
+                </a>
+                <p>Covid-19</p>
+            </div>
+            <div class="image-container">
+                <a href="{{ url_for('disease_page', disease='hepatitis') }}"> 
+                    <img src="https://th.bing.com/th/id/R.d65a0a3dc0a4f78a7e62e222212565d0?rik=vCl0YYtRvU798w&riu=http%3a%2f%2fwww.healthguideness.com%2fwp-content%2fuploads%2f2015%2f11%2fhepatitis-B.jpg&ehk=pE2QymcXkZZWL3kH1402c%2fZ9sJ%2fs4jUgmY%2b0T%2bOmhb8%3d&risl=&pid=ImgRaw&r=0" alt="Hepatitis">
+                </a>
+                <p>Hepatitis</p>
+            </div>
+            <div class="image-container">
+                <a href="{{ url_for('disease_page', disease='polio') }}"> 
+                    <img src="https://live.staticflickr.com/65535/52467777728_d45e03104f_b.jpg" alt="Polio">
+                </a>
+                <p>Polio</p>
+            </div>
+            <div class="image-container">
+                <a href="{{ url_for('disease_page', disease='smallpox') }}"> 
+                    <img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/2-smallpox-virus-infection-kateryna-konscience-photo-library.jpg" alt="Small Pox">
+                </a>
+                <p>Small Pox</p>
+            </div>
+            <div class="image-container">
+                <a href="{{ url_for('disease_page', disease='rubella') }}"> 
+                    <img src="https://th.bing.com/th/id/OIP.BHxpsePWjd4oZ23uyYDl8gAAAA?rs=1&pid=ImgDetMain" alt="Rubella">
+                </a>
+                <p>Rubella</p>
+            </div>
+            <div class="image-container">
+                <a href="{{ url_for('disease_page', disease='mumps') }}"> 
+                    <img src="https://th.bing.com/th/id/OIP.zlzdbiHztop1C9Dn_uzhiAHaEK?rs=1&pid=ImgDetMain" alt="Mumps">
+                </a>
+                <p>Mumps</p>
+            </div>
+            <div class="image-container">
+                <a href="{{ url_for('disease_page', disease='measles') }}"> 
+                    <img src="https://newsnetwork.mayoclinic.org/n7-mcnn/7bcc9724adf7b803/uploads/2017/02/measles-16x9.jpg" alt="Measles">
+                </a>
+                <p>Measles</p>
+            </div>
+            <div class="image-container">
+                <a href="{{ url_for('disease_page', disease='pertussis') }}"> 
+                    <img src="https://img.haikudeck.com/mg/97BF7E76-A475-475E-91FE-90AA0A0E7CA1.jpg?rasterSignature=2f4157fc20461387c7900d767a2d5649&theme=Five%20Seven%20Five&imageFilter=false" alt="Pertussis">
+                </a>
+                <p>Pertussis</p>
+            </div>
+        </section>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 AI-Based Disease Outbreak Prediction System. All rights reserved.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
